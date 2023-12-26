@@ -73,16 +73,12 @@ let saveInforDoctor = ( dataInput ) =>
     {
         try
         {
-            /*selectedPrice: this.state.selectedPrice.value,
-            selectedProvince: this.state.selectedPayment.value,
-            selectedPayment: this.state.selectedProvince.value,
-            nameClicnic: this.state.nameClicnic,
-            addressclicnic: this.state.addressclicnic,
-            note: this.state.note,
-            */
+
             if ( !dataInput.doctorId
-                || !dataInput.contentHTML
-                || !dataInput.contentMarkdown
+                || !dataInput.doctorHTML
+                || !dataInput.doctorMarkdonw
+                || !dataInput.descHTML
+                || !dataInput.descMarkdonw
                 || !dataInput.action
                 || !dataInput.selectedPrice
                 || !dataInput.selectedProvince
@@ -90,8 +86,8 @@ let saveInforDoctor = ( dataInput ) =>
                 || !dataInput.nameClicnic
                 || !dataInput.addressclicnic
                 || !dataInput.note
-                || !dataInput.specialtyId,
-                !! !dataInput.clinicId )
+                /* || !dataInput.specialtyId,
+                !! !dataInput.clinicId */ )
             {
                 resolve( {
                     errCode: 1,
@@ -102,16 +98,19 @@ let saveInforDoctor = ( dataInput ) =>
             {
                 if ( dataInput.action === 'CREATE' )
                 {
-                    await db.Markdowns.create( {
-                        contentHTML: dataInput.contentHTML,
-                        ContentMarkdown: dataInput.contentMarkdown,
-                        description: dataInput.discription,
+                    await db.Doctor_infor.create( {
+                        doctorHTML: dataInput.doctorHTML,
+                        doctorMarkdonw: dataInput.doctorMarkdonw,
+                        descHTML: dataInput.descHTML,
+                        descMarkdonw: dataInput.descMarkdonw,
                         doctorId: dataInput.doctorId,
                     } )
                 }
                 if ( dataInput.action === 'EDIT' )
                 {
-                    let doctorMarkdown = await db.Markdowns.findOne( {
+
+
+                    let doctorMarkdown = await db.Doctor_infor.findOne( {
                         where: {
                             doctorId: dataInput.doctorId
                         },
@@ -120,9 +119,10 @@ let saveInforDoctor = ( dataInput ) =>
 
                     if ( doctorMarkdown )
                     {
-                        doctorMarkdown.contentHTML = dataInput.contentHTML;
-                        doctorMarkdown.ContentMarkdown = dataInput.contentMarkdown;
-                        doctorMarkdown.description = dataInput.discription;
+                        doctorMarkdown.doctorHTML = dataInput.doctorHTML;
+                        doctorMarkdown.doctorMarkdonw = dataInput.doctorMarkdonw;
+                        doctorMarkdown.descHTML = dataInput.descHTML;
+                        doctorMarkdown.descMarkdonw = dataInput.descMarkdonw;
                         await doctorMarkdown.save();
                     }
                 }
@@ -142,8 +142,8 @@ let saveInforDoctor = ( dataInput ) =>
                     doctorInfor.nameClinic = dataInput.nameClicnic;
                     doctorInfor.note = dataInput.note;
                     doctorInfor.doctorId = dataInput.doctorId;
-                    doctorInfor.clinicId = dataInput.clinicId;
-                    doctorInfor.specialtyId = dataInput.specialtyId;
+                    /*  doctorInfor.clinicId = dataInput.clinicId;
+                     doctorInfor.specialtyId = dataInput.specialtyId; */
                     await doctorInfor.save();
                 } else
                 {
@@ -155,8 +155,8 @@ let saveInforDoctor = ( dataInput ) =>
                         nameClinic: dataInput.nameClicnic,
                         note: dataInput.note,
                         doctorId: dataInput.doctorId,
-                        clinicId: dataInput.clinicId,
-                        specialtyId: dataInput.specialtyId,
+                        /* clinicId: dataInput.clinicId,
+                        specialtyId: dataInput.specialtyId, */
                     } )
                 }
                 resolve( {

@@ -81,6 +81,15 @@ let createNewDoctor = ( data ) =>
                     role: data.role,
                     image: data.image,
                 } )
+
+                let doctor = await db.Doctor.findOne( {
+                    where: { email: data.email },
+                    raw: false
+
+                } )
+                await db.Doctor_infor.create( {
+                    doctorId: doctor.id,
+                } )
                 resolve( {
                     errCode: 0,
                     errMessage: 'Create new user succeed!',
@@ -288,6 +297,37 @@ let getDoctorById = ( inputId ) =>
 }
 
 
+// delete patient
+let deleteDoctor = ( userid ) =>
+{
+    return new Promise( async ( resolve, reject ) =>
+    {
+        let user = await db.Doctor.findOne( {
+            where: { id: userid },
+        } );
+
+        if ( !user )
+        {
+            resolve( {
+                errCode: 2,
+                errMessage: 'User not found!'
+            } );
+        }
+
+        await db.Doctor.destroy( {
+            where: { id: userid },
+        } );
+        await db.Doctor_infor.destroy( {
+            where: { doctorId: userid },
+        } );
+        resolve( {
+            errCode: 0,
+            errMessage: 'Delete user succeed!'
+        } );
+    } )
+}
+
+
 module.exports = {
     createNewDoctor: createNewDoctor,
     hashUserPassword: hashUserPassword,
@@ -295,4 +335,5 @@ module.exports = {
     updateDoctor: updateDoctor,
     getAllCode: getAllCode,
     getDoctorById: getDoctorById,
+    deleteDoctor: deleteDoctor,
 }

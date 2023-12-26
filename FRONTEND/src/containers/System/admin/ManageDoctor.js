@@ -197,12 +197,13 @@ class ManageDoctor extends Component
     handleSaveContentMarkdown = () =>
     {
         let { hasOldData } = this.state;
-
+        let id = +this.getid( this.props.location.search );
         this.props.saveInforDetailDoctor( {
-            contentHTML: this.state.contentHTML,
-            contentMarkdown: this.state.contentMarkdown,
-            discription: this.state.discription,
-            doctorId: this.state.selectedDoctor.value,
+            descHTML: this.state.descHTML,
+            descMarkdonw: this.state.descMarkdonw,
+            doctorHTML: this.state.doctorHTML,
+            doctorMarkdonw: this.state.doctorMarkdonw,
+            doctorId: id,
             action: hasOldData === true ? CRUD_ACTION.EDIT : CRUD_ACTION.CREATE,
             selectedPrice: this.state.selectedPrice.value,
             selectedProvince: this.state.selectedPayment.value,
@@ -210,8 +211,8 @@ class ManageDoctor extends Component
             nameClicnic: this.state.nameClicnic,
             addressclicnic: this.state.addressclicnic,
             note: this.state.note,
-            clinicId: this.state.selectedClinic.value,
-            specialtyId: this.state.selectedSpecialty.value,
+            /* clinicId: this.state.selectedClinic.value,
+            specialtyId: this.state.selectedSpecialty.value, */
 
         } )
     }
@@ -228,7 +229,7 @@ class ManageDoctor extends Component
         let res = await getDetailInforDoctor( selectedDoctor );
         console.log( "check selected doctor 1: ", this.state )
         console.log( "check selected doctor: ", res )
-        if ( res && res.data )
+        if ( res && res.data && res.data.Doctor_infor )
         {
             let addressclicnic = '', nameClicnic = '',
                 note = '', paymentId = '', priceId = '',
@@ -293,9 +294,10 @@ class ManageDoctor extends Component
         else
         {
             this.setState( {
-                contentHTML: '',
-                contentMarkdown: '',
-                discription: '',
+                doctorHTML: "",
+                doctorMarkdonw: "",
+                descMarkdonw: "",
+                descHTML: "",
                 hasOldData: false,
                 selectedPrice: '',
                 selectedProvince: '',
@@ -318,12 +320,19 @@ class ManageDoctor extends Component
         this.setState( stateCopy );
     }
 
-
+    handleOnchangeDescription = ( event, id ) =>
+    {
+        let stateCopy = { ...this.state };
+        stateCopy[ id ] = event.target.value;
+        this.setState( {
+            ...stateCopy
+        } )
+    }
 
     render ()
     {
         let { language } = this.props;
-        console.log( "Check state: ", this.state )
+        console.log( "Check state: ", this.state.selectedPrice )
         return (
             < React.Fragment >
                 <head>

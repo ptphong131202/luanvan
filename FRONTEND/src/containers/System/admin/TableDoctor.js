@@ -143,7 +143,7 @@ const mapDispatchToProps = dispatch =>
 {
     return {
         fetchDoctorRedux: () => dispatch( action.fetchAllDoctorStart() ),
-        deleteUserRedux: ( id ) => dispatch( action.deleteAdmin( id ) ),
+        deleteUserRedux: ( id ) => dispatch( action.deleteDoctor( id ) ),
     };
 };
 

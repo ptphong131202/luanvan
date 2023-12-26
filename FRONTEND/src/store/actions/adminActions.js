@@ -11,7 +11,7 @@ import
     getAllSpecialty, getAllClinic,
 
 
-    deleteadmin, editAdminService, createNewDoctor, editDoctorService
+    deleteadmin, editAdminService, createNewDoctor, editDoctorService, deletedDoctor
 } from '../../services/userService';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -504,7 +504,41 @@ export const fetchAllDoctorFailed = () => ( {
     type: actionTypes.FETCH_ALL_DOCTOR_FAILED
 } )
 
+// delete patient by id
+export const deleteDoctor = ( userid ) =>
+{
+    return async ( dispatch, getState ) =>
+    {
+        try
+        {
+            let res = await deletedDoctor( userid );
+            if ( res && res.errCode === 0 )
+            {
+                toast.success( "Delete user success!" );
+                dispatch( deleteDoctorSuccess() );
+                dispatch( fetchAllDoctorStart() );
+            }
+            else
+            {
+                toast.error( "Delete Admin error!" );
+                dispatch( deleteDoctorFailed() );
+            }
+        }
+        catch ( err )
+        {
+            toast.error( "Delete Admin error!" );
+            dispatch( deleteDoctorFailed() );
+            console.log( err );
+        }
+    }
+}
+export const deleteDoctorSuccess = () => ( {
+    type: actionTypes.DELETE_DOCTOR_SUCCESS,
+} )
 
+export const deleteDoctorFailed = () => ( {
+    type: actionTypes.DELETE_DOCTOR_FAILED
+} )
 
 // edit doctor
 export const editDoctor = ( data ) =>

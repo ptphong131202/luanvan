@@ -67,7 +67,9 @@ const actionTypes = Object.freeze( {
     // edit 
     EDIT_DOCTOR_SUCCESS: "EDIT_DOCTOR_SUCCESS",
     EDIT_DOCTOR_FAILED: "EDIT_DOCTOR_FAILED",
-
+    // delete 
+    DELETE_DOCTOR_SUCCESS: "DELETE_DOCTOR_SUCCESS", // delete patient successfully
+    DELETE_DOCTOR_FAILED: "DELETE_DOCTOR_FAILED", // delete patient failed
 
     // get detail doctor
     FETCH_REQUIRED_DOCTOR_INFOR_FAILED: "FETCH_REQUIRED_DOCTOR_INFOR_FAILED",

@@ -38,6 +38,7 @@ let initWebRoutes = ( app ) =>
     router.get( '/api/get-doctor', doctor.getDoctor ); // get all admin
     router.put( '/api/update-doctor', doctor.updateDoctor ); // update a patient
     router.get( '/api/get-doctor-by-id', doctor.getDoctorById ); // get all admin
+    router.delete( '/api/delete-doctor', doctor.deleteDoctor ); // delete admin updateAdmin
 
 
 

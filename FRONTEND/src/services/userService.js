@@ -89,6 +89,14 @@ const getAllcodeService = ( inputData ) =>
     return axios.get( `/api/allcode?type=${ inputData }` );
 }
 
+// delete a admi
+const deletedDoctor = ( userid ) =>
+{
+    return axios.delete( `api/delete-doctor`,
+        {
+            data: { id: userid },
+        } );
+}
 
 const getDetailInforDoctor = ( id ) =>
 {
@@ -218,7 +226,7 @@ export
     handleLoginApi, getAllUser, createNewUserService,
     deleteUserService, editUserService, createNewAdmin,
     getAllAmin, deleteadmin, editAdminService, createNewDoctor,
-    getAllDoctor, editDoctorService,
+    getAllDoctor, editDoctorService, deletedDoctor,
 
     getAllcodeService,
     getTopDoctorHomeService, saveDetailDoctor,

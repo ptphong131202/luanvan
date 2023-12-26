@@ -72,10 +72,28 @@ let getDoctorById = async ( req, res ) =>
     }
 }
 
+
+let deleteDoctor = async ( req, res ) =>
+{
+    if ( !req.body.id )
+    {
+        return res.status( 400 ).json( {
+            errCode: 1,
+            message: "Invalid patient id!"
+        } );
+    }
+    else
+    {
+        let message = await doctorService.deleteDoctor( req.body.id );
+        return res.status( 200 ).json( message );
+    }
+}
+
 module.exports = {
     createNewDoctor: createNewDoctor,
     getDoctor: getDoctor,
     updateDoctor: updateDoctor,
     getAllCode: getAllCode,
     getDoctorById: getDoctorById,
+    deleteDoctor: deleteDoctor,
 }
