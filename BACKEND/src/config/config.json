@@ -1,0 +1,29 @@
+{
+  "development": {
+    "database": "datlich",
+    "dialect": "mysql",
+    "host": "127.0.0.1",
+    "logging": false,
+    "password": null,
+    "query": {
+      "raw": true
+    },
+    "raw": true,
+    "timzoon": "+07:00",
+    "username": "root"
+  },
+  "production": {
+    "database": "database_production",
+    "dialect": "mysql",
+    "host": "127.0.0.1",
+    "password": null,
+    "username": "root"
+  },
+  "test": {
+    "database": "database_test",
+    "dialect": "mysql",
+    "host": "127.0.0.1",
+    "password": null,
+    "username": "root"
+  }
+}

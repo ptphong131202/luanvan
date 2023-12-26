@@ -1,0 +1,46 @@
+.detailHandbook {
+    margin-top: 80px;
+    padding: 10px 150px;
+
+    .detailHandbook-content {
+        scroll-behavior: smooth;
+        border-radius: 5px;
+        background-color: #ffff;
+        padding: 10px 25px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+        .detailHandbook-name {
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .detailHandbook-desc {
+
+            img {
+                width: 100%;
+            }
+
+            em {
+                color: #45c3d2;
+                text-align: center;
+
+                code {
+                    background-color: aqua;
+                }
+            }
+
+            i {
+                color: aqua;
+            }
+
+            p {
+                code {
+                    width: 100%;
+                    text-align: center;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,118 @@
+{
+    "homeheader": {
+        "specialty": "Chuyên Khoa",
+        "searchdoctor": "Tìm bác sĩ theo chuyên khoa",
+        "medicalfacilities": "Cơ sở Y Tế",
+        "choosehospital": "Chọn bệnh viện phòng khám",
+        "doctor": "Bác sĩ",
+        "choosegooddoctor": "Chọn bác sĩ gỏi",
+        "exampaacket": "Gói khám",
+        "generalexamination": "Khám tổng quát",
+        "help": "Hỗ trợ",
+        "welcome": "Xin chào"
+    },
+    "banner": {
+        "medicalfoundation": "NỀN TẢNG Y TẾ",
+        "healthcare": "CHĂM SÓC SỨC KHỎE TOÀN DIỆN",
+        "specialist": "Khám chuyên khoa",
+        "telemedicine": "Khám từ xa",
+        "generalsexam": "khám tổng quát",
+        "medicaltest": "Xét nghiệm y học",
+        "mentalhealth": "Sức khỏe tinh thần",
+        "dentalexam": "Khám nha khoa",
+        "surgicalpacket": "Gói phẩu thuật",
+        "healthylivedibet": "Sức khỏe tiểu đường",
+        "healthtest": "Bài test sức khỏe",
+        "typesearch": "Nhập để tìm kiếm"
+    },
+    "menu": {
+        "admin": {
+            "manage-user": "Người dùng",
+            "manage-doctor": "Quản lý bác sĩ",
+            "manage-admin": "Quản lý admin",
+            "crud": "CRUD user",
+            "crud-redux": "Quản lý bệnh nhân",
+            "clinic": "Phòng khám",
+            "manage-clinic": "Quản lý phòng khám",
+            "specialty": "Chuyên Khoa",
+            "manage-specialty": "Quản lý chuyên khoa",
+            "handbook": "Cẩm nang",
+            "manage-handbook": "Quản lý cẩm nang"
+        },
+        "doctor": {
+            "manage-shedule": "Quản lý kế hoạch khám bệnh",
+            "manage-patient": "Quản lý bệnh nhân khám bệnh",
+            "manage-handbook": "Quản lý cẩm nang"
+        }
+    },
+    "manage-user": {
+        "adduser": "Thêm mới người dùng",
+        "edituser": "Chỉnh sửa người dùng",
+        "manage-patient": "Quản lý bệnh nhân khám bệnh",
+        "manage-doctor": "Quản lý bác sĩ",
+        "manage-admin": "Quản lý tài khoản quản trị",
+        "password": "Mật khẩu",
+        "fullname": "Họ tên ",
+        "firstname": "Họ tên đệm",
+        "lastname": "Tên",
+        "birthday": "Ngày sinh",
+        "phone": "Số điện thoại",
+        "address": "Địa chỉ",
+        "gender-name": "Giới tính",
+        "position": "Vị trí",
+        "image": "Hình ảnh",
+        "add": "Thêm người dùng",
+        "edit": "Lưu thay đổi"
+    },
+    "homePage": {
+        "out-standing-doctor": "Bác sĩ nỗi bật tuần qua",
+        "more-info": "Tìm kiếm",
+        "Outstanding-specialties": "Chuyên khoa nổi bật",
+        "Outstanding-medical-facilities": "Cơ sở y tế nổi bật",
+        "Handbook": "Cẩm nang"
+    },
+    "manage-schedule": {
+        "title": "Quản lý kế hoạch khám bệnh",
+        "choose-doctor": "Chọn bác sĩ: ",
+        "choose-date": "Chọn ngày: ",
+        "save": "Lưu Thông tin",
+        "doctor": "Bác sĩ"
+    },
+    "patient": {
+        "detail-doctor": {
+            "schedule": "Lịch khám",
+            "no-schedule": "Không có lịch khám bệnh trong thời gian này!"
+        }
+    },
+    "admin": {
+        "manage-doctor": {
+            "title": "Thêm thông tin bác sĩ",
+            "select-doctor": "Chọn bác sĩ",
+            "intro": "Thông tin giới thiệu",
+            "add": "Tạo thông tin",
+            "save": "Lưu Thông tin",
+            "choose-price": "Chọn giá",
+            "choose-payment": "Chọn phương thức thanh toán",
+            "choose-province": "Chọn tỉnh thành",
+            "name-clinic": "Tên phòng khám",
+            "address-clinic": "Địa chỉ phòng khám",
+            "note": "note",
+            "doctor": "Bác sĩ"
+        },
+        "manage-schedule": {
+            "infor-schedules": "Thông tin đặt lịch khám bệnh",
+            "price": "Giá khám",
+            "name": "Họ tên",
+            "phone": "Số điện thoại",
+            "address": "Địa chỉ liên hệ",
+            "date": "Ngày khám",
+            "time": "Giờ khám",
+            "note": "Ghi chú",
+            "gender": "Giới tính",
+            "who": "Đặt cho ai",
+            "reason": "Lý do khám",
+            "confirm": "Xác nhận",
+            "cancel": "Hủy bỏ"
+        }
+    }
+}

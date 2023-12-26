@@ -1,0 +1,129 @@
+.user-redux-container {
+    .user-redux-name {
+        position: fixed;
+        top: 50px;
+        left: 0;
+        right: 0;
+    }
+
+
+    .user-redux-body {
+        position: fixed;
+        top: 100px;
+        left: 0;
+        right: 0;
+
+        .container-form .header-name-adduser {
+            background-color: #e9edf9;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            font-size: 16px;
+            padding: 5px;
+            width: 185px;
+            transform: translateX(-10px) translateY(-1px);
+            color: blue;
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+        }
+    }
+
+
+    .container.userManage {
+        position: fixed;
+        bottom: 5px;
+        left: 0;
+        right: 0;
+        height: 350px;
+        overflow: auto;
+
+        thead {
+            background-color: blue;
+            color: white;
+        }
+
+    }
+
+    .action {
+        text-align: center;
+
+        .buttonEdit {
+            border: none;
+            border-radius: 2px;
+            color: white;
+            background-color: yellow;
+
+        }
+
+        .buttonDelete {
+            border: none;
+            border-radius: 2px;
+            color: white;
+            background-color: red;
+            margin-left: 5px;
+
+        }
+
+        .buttonDetail {
+            background-color: blue;
+            color: white;
+            margin-right: 5px;
+            border: none;
+            padding: 0px 13px;
+            border-radius: 2px;
+        }
+    }
+
+
+    .container.userManage.tabledoctor {
+        position: fixed;
+        bottom: 5px;
+        left: 0;
+        right: 0;
+        height: 200px;
+        overflow: auto;
+    }
+}
+
+
+
+
+
+
+.down-main {
+    position: relative;
+
+    img {
+        width: 15px;
+        position: absolute;
+        top: 40px;
+        right: 15px;
+    }
+}
+
+.preview-img-container {
+
+
+    .label_upload-img {
+        padding: 5px;
+        background: #c0bbbbcc;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .reviewImage {
+        width: 100%;
+        height: 100px;
+        margin-top: 5px;
+        border-radius: 3px;
+        cursor: pointer;
+
+        background-position: center;
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+}
+
+.container-form {
+    form {
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    }
+}

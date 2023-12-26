@@ -1,0 +1,44 @@
+.managePatient {
+    table {
+        thead {
+            tr {
+                th {
+                    text-align: center;
+                    background-color: rgb(0, 34, 255);
+                    color: white;
+                }
+
+
+            }
+        }
+
+        tbody {
+            tr {
+                .center {
+                    text-align: center;
+                    width: 180px;
+
+                    .btn-submit {
+                        border: none;
+                        min-width: 100px;
+                        padding: 5px 10px;
+                        border-radius: 5px;
+                        font-weight: bold;
+                        color: white;
+
+                        &.btn-confirm {
+                            background-color: #007e00;
+
+                            &:hover {
+                                background-color: #10bd10;
+                            }
+                        }
+
+
+                    }
+
+                }
+            }
+        }
+    }
+}

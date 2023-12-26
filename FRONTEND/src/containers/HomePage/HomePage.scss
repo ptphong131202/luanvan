@@ -1,0 +1,450 @@
+/* home header */
+.home-header-container {
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 1000;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    .home-header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 30px;
+        height: 100%;
+
+        .home-header-left {
+            width: 20%;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            height: 100%;
+
+            .bars {
+                font-size: 25px;
+                margin: 0 10px;
+                cursor: pointer;
+            }
+
+            .logo-img {
+                background: url("../../assets/logo.png") no-repeat;
+                width: 150px;
+                height: 100%;
+                background-size: 100%;
+                cursor: pointer;
+            }
+        }
+
+        .home-header-center {
+            width: 60%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .child-content {
+                width: 25%;
+                text-align: center;
+                cursor: pointer;
+
+                .child-content-name {
+                    font-weight: bold;
+                }
+
+                .child-content-title {
+                    font-weight: 300;
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .home-header-right {
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+
+            .support {
+                padding: 0 10px;
+                cursor: pointer;
+                color: blue;
+                width: 50%;
+                text-align: center;
+
+                i {
+                    padding: 0 5px;
+                    cursor: pointer;
+                }
+            }
+
+            .language {
+                width: 50%;
+                display: flex;
+                justify-self: end;
+                align-items: center;
+                padding: 0 10px;
+
+                .language-en {
+                    cursor: pointer;
+                    padding: 10px;
+
+                    &.active {
+                        color: orange;
+                    }
+                }
+
+                .language-vi {
+                    cursor: pointer;
+
+                    &.active {
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* banner */
+.banner-container {
+    padding-top: 60px;
+    width: 100%;
+    height: 100%;
+    background: url("../../assets/banner.png") no-repeat center;
+    opacity: 0.9;
+    background-size: 100%;
+
+    .banner-header {
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+        color: yellow;
+        text-shadow: 2px 2px 2px black;
+        padding-top: 80px;
+
+        .banner-header-title {
+            font-weight: bold;
+            padding: 10px;
+        }
+
+    }
+
+    .banner-search {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-top: 120px;
+        flex-direction: column;
+        position: relative;
+
+        .listSearch {
+            position: absolute;
+            width: 27%;
+            max-height: 200px;
+            background-color: #ffff;
+            top: 170px;
+            z-index: 1000;
+            border-radius: 5px;
+            overflow: hidden;
+
+            li {
+                list-style: none;
+                padding: 5px 20px;
+                text-align: start;
+                border-bottom: 0.5px solid #cccc;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #eeee;
+                }
+            }
+
+            .listSearch-seemore {
+                color: blue;
+            }
+        }
+
+        .banner-search-content {
+            width: 30%;
+            height: 50px;
+            border: 1px solid #ccc;
+            background-color: #ffff;
+            border-radius: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+
+            i {
+                width: 10%;
+                font-size: 20px;
+
+            }
+
+            input {
+                flex: 1;
+                height: 100%;
+                padding: 0;
+                outline: none;
+                background-color: transparent;
+                border: none;
+                padding-right: 10px;
+            }
+        }
+    }
+
+    .banner-footer {
+        width: 100%;
+        height: 140px;
+        margin-top: 180px;
+        background: linear-gradient(#ffffff00,
+                #ffffffb8,
+                #ffff);
+
+        .banner-footer-content {
+            width: 100%;
+            height: 60%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            .banner-footer-child {
+                width: 10%;
+                height: 100%;
+                text-align: center;
+                align-items: center;
+                padding: 10px;
+
+                .content-img {
+                    width: 40px;
+                    height: 40px;
+                    background-color: #fff;
+                    border-radius: 50%;
+                    margin: 0 auto;
+
+                    .content-icon {
+                        width: 70%;
+                        height: 100%;
+                        transform: translateX(6px);
+
+                        &.content-icon1 {
+                            background: url("../../assets/161905-iconkham-chuyen-khoa.png") center no-repeat;
+                            background-size: 100%;
+                        }
+
+                        &.content-icon2 {
+                            background: url("../../assets/161817-iconkham-tu-xa.png") center no-repeat;
+                            background-size: 100%;
+                        }
+
+                        &.content-icon3 {
+                            background: url("../../assets/161350-iconkham-tong-quan.png") center no-repeat;
+                            background-size: 100%;
+                        }
+
+                        &.content-icon4 {
+                            background: url("../../assets/161340-iconxet-nghiem-y-hoc.png") center no-repeat;
+                            background-size: 100%;
+                        }
+
+                        &.content-icon5 {
+                            background: url("../../assets/161403-iconsuc-khoe-tinh-than.png") center no-repeat;
+                            background-size: 100%;
+                        }
+
+                        &.content-icon6 {
+                            background: url("../../assets/161410-iconkham-nha-khoa.png") center no-repeat;
+                            background-size: 100%;
+                        }
+
+                        &.content-icon7 {
+                            background: url("../../assets/161421-icongoi-phau-thuat.png") center no-repeat;
+                            background-size: 100%;
+                        }
+
+                        &.content-icon8 {
+                            background: url("../../assets/145536-thiet-ke-chua-co-ten-4.png") center no-repeat;
+                            background-size: 100%;
+                        }
+
+                        &.content-icon9 {
+                            background: url("../../assets/161442-iconbai-test-suc-khoe2.png") center no-repeat;
+                            background-size: 100%;
+                        }
+
+
+                    }
+
+
+                }
+
+                .content-title {
+                    font-size: 16px;
+                    text-shadow: 1px 1px 1px #ccc;
+                    padding-top: 10px;
+                }
+            }
+
+
+        }
+    }
+
+}
+
+/* Section */
+.Section {
+    height: 100%;
+    width: 100%;
+
+    &.specialty {
+        background-color: #f0f2f5;
+    }
+
+    &.HealthFacility {
+        background-color: #f0f2f5;
+    }
+
+    .section-content {
+        width: 80%;
+        height: 100%;
+        margin: 0 auto;
+        padding: 30px 0;
+
+
+        .Section .section-content .slick-initialized .slick-slide {
+            width: 225px;
+            margin: 0 5px;
+        }
+
+        .section-content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 10px;
+
+            .section-header-name {
+                font-weight: bold;
+                font-size: 20px;
+            }
+
+            .section-header-navi {
+                background-color: #cccc;
+                cursor: pointer;
+                padding: 5px 10px;
+                border-radius: 5px;
+
+                &:hover {
+                    background-color: greenyellow;
+                }
+            }
+        }
+
+        .slick-prev,
+        .slick-next {
+            top: 45%;
+        }
+
+        .slick-prev {
+            z-index: 100;
+            left: -15px;
+        }
+
+        .slick-next {
+            right: 5px;
+        }
+
+        .slick-prev::before,
+        .slick-next::before {
+            color: #7a7878cc;
+            font-size: 40px;
+        }
+
+        .slick-list {
+            height: 180px;
+
+            .slick-track {
+                height: 190px;
+
+                .section-list-ck {
+                    width: 220px;
+
+                    .section-list {
+                        cursor: pointer;
+                        height: 175px;
+                        margin: 0 10px;
+                        width: 95%;
+                        border-radius: 2px;
+                        overflow: hidden;
+                        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+                        background: #ffff;
+
+                        .section-list-img {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            .HealthFacility-section-list-img {
+                                width: 70%;
+                                height: 130px;
+                            }
+
+                            img {
+                                width: 100%;
+                                height: 150px;
+                            }
+
+                        }
+
+
+                        .section-list-name {
+                            padding: 5px;
+                            text-align: center;
+
+                        }
+
+                        &:hover {
+                            color: #45c3d2;
+                        }
+                    }
+
+                }
+            }
+
+        }
+
+    }
+}
+
+.slick-disabled {
+    display: none !important;
+}
+
+/* footer */
+.homefooter {
+    text-align: center;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffff;
+
+    a {
+        padding: 0 5px;
+        text-decoration: none;
+    }
+}
+
+
+.markdown {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}

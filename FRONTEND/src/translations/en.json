@@ -1,0 +1,138 @@
+{
+    "homeheader": {
+        "specialty": "Medical specialty",
+        "searchdoctor": "Find a doctor by specialty",
+        "medicalfacilities": "Medical Facilities",
+        "choosehospital": "Choose a clinic hospital",
+        "doctor": "Doctor",
+        "choosegooddoctor": "Choosing a salad doctor",
+        "exampaacket": "Examination package",
+        "generalexamination": "General examination",
+        "help": "Help",
+        "welcome": "Welcome"
+    },
+    "banner": {
+        "medicalfoundation": "MEDICAL FOUNDATION",
+        "healthcare": "HOLISTIC HEALTH CARE",
+        "specialist": "Specialist examination",
+        "telemedicine": "Telemedicine",
+        "generalsexam": "General examination",
+        "medicaltest": "Medical tests",
+        "mentalhealth": "Mental health",
+        "dentalexam": "Dental examination",
+        "surgicalpacket": "Surgical package",
+        "healthylivedibet": "Healthy Living Diabetes",
+        "healthtest": "Health tests",
+        "typesearch": "Type to search"
+    },
+    "common": {
+        "add": "Add",
+        "edit": "Edit",
+        "delete": "Delete",
+        "decentralize": "Decentralize",
+        "close": "Close",
+        "save": "Save",
+        "refresh": "Refresh",
+        "accept": "Accept",
+        "confirm": "Confirm",
+        "confirm-this-task": "Are you sure to process this task?",
+        "fail-to-load-data": "Fail to load data",
+        "unknown-error": "There was an error",
+        "internal-server-error": "Internal server error",
+        "bad-request": "Bad request",
+        "forbiden-request": "Invalid input data",
+        "fail-to-load-all-code": "Fail to load data from allcode",
+        "sum": "Sum",
+        "date-range-invalid": "Date range invalid"
+    },
+    "menu": {
+        "admin": {
+            "manage-user": "User",
+            "manage-doctor": "Doctor",
+            "manage-admin": "Admin",
+            "crud": "CRUD user",
+            "crud-redux": "Manage patient",
+            "clinic": "Clinic",
+            "manage-clinic": "Manage clinic",
+            "specialty": "Sprcialty",
+            "manage-specialty": "Manage-specialty",
+            "handbook": "Handbook",
+            "manage-handbook": "Manage-handbook"
+        },
+        "doctor": {
+            "manage-shedule": "Manage Doctor's Schedule",
+            "manage-patient": "Manage Doctor's Patient",
+            "manage-handbook": "Manage Doctor's Handbook"
+        }
+    },
+    "manage-user": {
+        "adduser": "Create a new user",
+        "edituser": "Edit a new user",
+        "password": "Password",
+        "manage-patient": "Manage Patient",
+        "manage-doctor": "Manage doctor",
+        "manage-admin": "Manage admin",
+        "fullname": "FullName",
+        "lastname": "LastName",
+        "firstname": "Firtname",
+        "birthday": "Dirthday",
+        "phone": "Phone",
+        "address": "Address",
+        "gender-name": "Gender",
+        "position": "Position",
+        "image": "Image",
+        "add": "Add",
+        "edit": "Save Change"
+    },
+    "homePage": {
+        "out-standing-doctor": "Last week's featured doctor",
+        "more-info": "More infor",
+        "Outstanding-specialties": "Outstanding specialties",
+        "Outstanding-medical-facilities": "Outstanding medical facilities",
+        "Handbook": "Handbook"
+    },
+    "manage-schedule": {
+        "title": "Manage Doctor's Schedule",
+        "choose-doctor": "Choose doctor: ",
+        "choose-date": "Choose date: ",
+        "save": "Save infor",
+        "doctor": "Doctor"
+    },
+    "patient": {
+        "detail-doctor": {
+            "schedule": "Schedule",
+            "no-schedule": "No schedule in this date!"
+        }
+    },
+    "admin": {
+        "manage-doctor": {
+            "title": "Thêm thông tin bác sĩ",
+            "select-doctor": "Select Doctor",
+            "intro": "Introduction",
+            "add": "Create infor",
+            "save": "Save infor",
+            "choose-price": "Choose Price",
+            "choose-payment": "Choose Payment",
+            "choose-province": "Choose Province",
+            "name-clinic": "Clinic Name",
+            "address-clinic": "Clinic address",
+            "note": "note",
+            "doctor": "Doctor"
+        },
+        "manage-schedule": {
+            "infor-schedules": "Medical appointment booking information",
+            "price": "Examination price",
+            "name": "FullName",
+            "phone": "PhoneNumber",
+            "address": "Contact address",
+            "date": "Date of examination",
+            "time": "Time of examination",
+            "note": "Note",
+            "gender": "Gender",
+            "who": "Who to book",
+            "reason": "Reasons for examination",
+            "confirm": "Confirm",
+            "cancel": "Cancel"
+        }
+    }
+}

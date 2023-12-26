@@ -1,0 +1,40 @@
+.listSpecialty {
+    &.listdoctor {
+        .specialty-list {
+            .arrSpecialty {
+                height: 135px;
+
+                .seemore {
+                    &.doctor {
+                        width: 940px;
+                    }
+                }
+
+                .specialty-item {
+                    .logo {
+                        width: 15%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        img {
+
+                            border-radius: 50%;
+                            width: 100px;
+                            height: 100px;
+                        }
+                    }
+
+                    .right {
+                        width: 85%;
+
+                        .top {
+                            font-weight: bold;
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

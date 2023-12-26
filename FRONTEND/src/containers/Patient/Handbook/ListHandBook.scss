@@ -1,0 +1,29 @@
+.arrSpecialty-handbook {
+    cursor: pointer;
+    background-color: #ffff;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 10px;
+
+
+    .specialty-item {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+
+        .logo {
+            .img-handbook {
+                width: 150px;
+                height: 90px;
+                border-radius: 10px;
+            }
+        }
+
+        .right {
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px;
+
+        }
+    }
+}

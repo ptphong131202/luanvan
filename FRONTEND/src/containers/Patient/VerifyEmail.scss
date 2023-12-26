@@ -1,0 +1,42 @@
+.verify-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .verify-container-content {
+        border: 1px solid #ccc;
+        width: 330px;
+        height: 180px;
+        background-color: #ffff;
+        padding: 10px;
+        border-radius: 25px;
+
+        .success {
+            .logo {
+                width: 60%;
+                height: 80px;
+                background: url("../../assets/logo.png");
+                background-size: 100%;
+                background-repeat: no-repeat;
+                margin-left: 45px;
+                margin-top: 20px;
+
+            }
+
+            .success-title {
+                font-size: 16px;
+                text-align: center;
+                margin: 0;
+                font-weight: 600;
+            }
+
+            &.failed {
+                height: 150 px;
+
+            }
+        }
+
+
+    }
+}

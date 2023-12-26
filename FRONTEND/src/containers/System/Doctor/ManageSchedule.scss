@@ -1,0 +1,67 @@
+.manage-schedule {
+    height: 250px;
+
+    .manage-schedule-content {
+        width: 70%;
+
+        .date {
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+            height: 38px;
+        }
+
+        .choose {
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+        }
+
+        .hour-container {
+            height: 100px;
+
+            .hour-container-content {
+                border: 1px solid #cccc;
+                background-color: white;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+                padding: 10px;
+            }
+        }
+
+        .btn-schedule-en {
+            min-width: 206px;
+            background: rgb(209, 255, 4);
+            margin: 5px;
+
+            &:hover {
+                background: rgb(12, 255, 4);
+            }
+
+            &.active {
+                background: rgb(12, 255, 4);
+            }
+        }
+
+        .btn-schedule-vi {
+            min-width: 113px;
+            background: rgb(209, 255, 4);
+            margin: 5px;
+
+            &:hover {
+                background: rgb(12, 255, 4);
+            }
+
+            &.active {
+                background: rgb(12, 255, 4);
+            }
+        }
+
+        .container-save-vi {
+            text-align: center;
+            transform: translateY(65px);
+        }
+
+        .container-save-en {
+            text-align: center;
+            transform: translateY(100px);
+        }
+
+    }
+}

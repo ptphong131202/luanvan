@@ -1,0 +1,22 @@
+.Section .section-content .slick-list .section-list-ck{
+    .section-list.imgProfessionalDoctor{
+        border : 1px solid #cccc;
+        padding: 10px;
+        border-radius: 3px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    
+        .section-list-img {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            .imgProfessionalDoctor{
+                    width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                }
+            }
+        .imgProfessionalDoctor-name{
+            text-align: center;
+        }
+    } 
+} 

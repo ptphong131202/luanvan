@@ -1,0 +1,75 @@
+.modal-content-booking {
+    height: 100%;
+
+    .booking-madal-header {
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: justify;
+        padding: 10px;
+        border-bottom: 1px solid #cccc;
+        color: blue;
+        font-size: 20px;
+
+        .left {
+            font-weight: bold;
+            cursor: default;
+        }
+
+        .right {
+            font-size: 16px;
+            cursor: pointer;
+        }
+    }
+
+    .booking-madal-body {
+        border-top: 1px solid #cccc;
+        height: 100%;
+
+        .col-6 {
+            margin-top: 10px;
+        }
+
+        .row {
+            padding: 20px;
+            padding-top: 0;
+        }
+    }
+
+    .booking-madal-footer {
+        border-top: 1px solid #cccc;
+        height: 50px;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: end;
+        gap: 15px;
+
+        button {
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            min-width: 100px;
+
+        }
+
+        .btn-booking-confirm {
+            background-color: rgba(0, 0, 255, 0.8);
+            color: #ffff;
+
+            &:hover {
+                background: rgba(0, 0, 255, 1);
+            }
+        }
+
+        .btn-booking-cancel {
+            background: #cccc;
+
+            &:hover {
+                background: red;
+                color: #ffff;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,57 @@
+.profile {
+    padding: 10px 20px;
+
+    .intro-doctor {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+
+        .content-left {
+            img {
+                border-radius: 50%;
+                height: 80px;
+            }
+        }
+
+        .content-right {
+            padding: 0 10px;
+
+            .up {
+                font-size: 20px;
+                font-weight: bold;
+                color: #000000;
+            }
+
+            .down {
+                text-align: justify;
+
+                p {
+                    margin: 0;
+                }
+
+                .hasLocation {
+                    display: flex;
+                    gap: 5px;
+
+                    .location {
+                        background: url("../../../assets/location.jpg");
+                        height: 15px;
+                        width: 15px;
+                        background-size: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .price {
+        color: red;
+        font-weight: bold;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 10px;
+        font-size: 20px;
+        margin-top: 10px;
+    }
+}

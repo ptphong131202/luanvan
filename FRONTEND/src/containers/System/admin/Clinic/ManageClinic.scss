@@ -1,0 +1,37 @@
+.clinic-container {
+    margin-top: 50px;
+
+    .file {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .label-markdown {
+        background: #ffff;
+        width: 135px;
+        padding: 5px 10px;
+        font-size: 16px;
+        margin-top: 10px;
+
+        i {
+            margin-left: 10px;
+        }
+    }
+
+    .markdown {
+        margin-top: 10px;
+
+        label {
+            background: #ffff;
+            width: 135px;
+            padding: 5px 10px;
+            font-size: 16px;
+
+            i {
+                font-size: 16px;
+                margin-left: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+}

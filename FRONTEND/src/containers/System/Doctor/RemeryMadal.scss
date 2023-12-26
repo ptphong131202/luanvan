@@ -1,0 +1,12 @@
+.modal-footer {
+    .isChangeImageFalse {
+        background-color: #ccc;
+    }
+}
+
+.modal-body {
+    .file {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,114 @@
+.packet-exam {
+    .banner {
+        background-image: url("../../../assets/banner.png");
+        height: 600px;
+        background-position: center;
+        opacity: 0.5;
+    }
+
+    p {
+        &.exam {
+            transform: translateY(-250px);
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: #cccc;
+        }
+    }
+
+    .search {
+        padding: 10px 100px;
+        transform: translateY(-190px);
+
+        .search-content {
+            background-color: rgba(255, 195, 17, 1.00);
+            padding: 30px 50px;
+            border-radius: 10px;
+
+            .col-12 {
+                padding: 0;
+            }
+
+            .form-search {
+                background-color: #ffff;
+                height: 40px;
+                border-radius: 10px;
+                overflow: hidden;
+
+                input {
+                    width: 92.5%;
+                    height: 100%;
+                    border: none;
+                    outline: none;
+                    border-radius: 10px;
+                    padding: 10px;
+                }
+
+                span {
+                    background: #cccc;
+                    padding: 7px;
+                    border-radius: 10px;
+                }
+            }
+
+            .down-search {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 10px;
+
+                .selected {
+                    padding: 0 2px;
+                    height: 30px;
+
+                    .selected-content {
+                        background-color: #ffff;
+                        height: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 0 10px;
+                        border-radius: 10px;
+                    }
+                }
+
+            }
+        }
+    }
+
+    .cat {
+        padding: 0 100px;
+        transform: translateY(-180px);
+
+        .cat-content {
+            background-color: #ffff;
+            border-radius: 10px;
+            height: 190px;
+
+            h3 {
+                margin: 0;
+                padding: 5px 10px;
+            }
+
+            hr {
+                margin-top: 0;
+            }
+
+            .category {
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                img {
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    text-align: center;
+                    margin-left: 60px;
+                }
+            }
+        }
+    }
+
+}

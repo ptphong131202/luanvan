@@ -1,0 +1,98 @@
+.detail-specialty {
+    margin-top: 80px;
+
+    .top {
+
+
+        .top-content {
+            height: 100%;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px 20px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            background: #ffff;
+
+            .more1 {
+                left: 20px;
+                margin: 0;
+                width: 100%;
+                background-color: #ffff;
+
+                span {
+                    cursor: pointer;
+
+                    &:hover {
+                        color: blue;
+                    }
+                }
+            }
+        }
+
+        .top-content-hidden {
+            height: 200px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px 20px;
+            position: relative;
+            background: #ffff;
+
+            .more {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                padding-left: 20px;
+                margin: 0;
+                width: 100%;
+                background-color: rgba(144, 144, 144, 1);
+
+                box-shadow: rgba(0, 0, 0, 0.56) 0px 1px 33px 14px;
+            }
+
+
+
+            span {
+                cursor: pointer;
+
+                &:hover {
+                    color: blue;
+                }
+            }
+
+        }
+    }
+}
+
+.detail-specialty-content {
+    padding-bottom: 10px;
+
+    .detail-specialty-content-down {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        min-height: 330px;
+        background-color: #ffff;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+        .detail-specialty-content-down-left {
+            width: 50%;
+            border-right: 1px solid #ccc;
+            padding: 10px;
+
+            .more-infor {
+                color: blue;
+                margin-left: 25px;
+                cursor: pointer;
+            }
+        }
+
+        .content-right {
+            flex: 1;
+
+            .doctorSchedule {
+                padding: 10px;
+            }
+        }
+    }
+}

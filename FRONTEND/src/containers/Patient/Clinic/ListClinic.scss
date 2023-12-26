@@ -1,0 +1,90 @@
+.listSpecialty {
+    padding: 100px;
+
+    .form-search {
+        border: 1px solid black;
+        border-radius: 30px;
+        background: #ffff;
+        display: flex;
+        justify-content: space-between;
+        height: 50px;
+        overflow: hidden;
+        align-items: center;
+
+        i {
+            width: 10%;
+            font-size: 20px;
+            padding: 20px;
+        }
+
+        input {
+            width: 90%;
+            height: 100%;
+            border: none;
+            background: transparent;
+            border: 0px solid;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    .specialty-list {
+
+        .arrSpecialty {
+            height: 240px;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+            background-color: #ffff;
+            border-radius: 10px;
+            margin-top: 12px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+            &.active {
+                height: 100%;
+            }
+
+            .seemore {
+                position: absolute;
+                bottom: 0;
+                right: 0%;
+                width: 799px;
+                background: linear-gradient(#cececeb0, #c3c3c3);
+                box-shadow: #263948 0 1px 30px -10px;
+                height: 30px;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+
+                span {
+                    cursor: pointer;
+                    color: blue;
+                    padding-left: 10px;
+                }
+            }
+
+            .specialty-item {
+                display: flex;
+                justify-content: center;
+
+
+
+                .logo {
+                    width: 30%;
+
+                    img {
+                        width: 300px;
+                        height: 200px;
+                    }
+                }
+
+                .right {
+                    width: 70%;
+                }
+            }
+        }
+
+    }
+}

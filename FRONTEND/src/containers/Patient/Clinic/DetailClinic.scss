@@ -1,0 +1,81 @@
+.background-header-clinic {
+    width: 100%;
+    height: 300px;
+    background: url("../../../assets/bv.jpg") center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+}
+
+.DetaiClinic {
+    transform: translateY(-76px);
+    padding: 0 100px;
+
+    .DetailClinic-name {
+        background-color: #ffffffa6;
+        height: 150px;
+        display: flex;
+        padding: 0 30px;
+        justify-content: start;
+        align-items: center;
+        border-radius: 5px;
+
+        .DetailClinic-top-left {
+            img {
+                width: 200px;
+                height: 110px;
+                border-radius: 50%;
+            }
+        }
+
+        .DetailClinic-top-right {
+            margin-left: 20px;
+
+            .DetailClinic-top-right-top {
+                font-size: 25px;
+                font-weight: bold;
+
+            }
+
+            .DetailClinic-top-right-down {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .DetailClinic-desc {
+        font-size: 16px;
+        padding: 10px 20px;
+        background-color: rgba(255, 236, 178, 1.00);
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 10px;
+
+        li {
+            margin-left: 20px;
+        }
+
+        &.DetailClinic-desc2 {
+            background: #68ceff;
+        }
+    }
+
+    .content-clinic {
+        font-size: 16px;
+        padding: 10px 20px;
+        background-color: #ffff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 10px;
+
+        h2 {
+            color: rgb(60, 179, 238);
+        }
+
+        img {
+            width: 80%;
+            margin: 0 auto;
+            margin-left: 10%;
+        }
+    }
+}
