@@ -478,7 +478,6 @@ export const fetchAllDoctorStart = ( data ) =>
         try
         {
             let res = await getAllDoctor();
-            console.log( "checkkkkkk: ", res );
             if ( res && res.errCode === 0 )
             {
                 dispatch( fetchAllDoctorSuccess( res.data.reverse() ) );
@@ -552,7 +551,6 @@ export const getRquiredDoctorInfor = () =>
         {
             dispatch( { type: actionTypes.FETCH_REQUIRED_DOCTOR_INFOR_START } );
             let resPrice = await getAllcodeService( "PRICE" );
-            console.log( "check res:sssss ", resPrice )
             let resPayment = await getAllcodeService( "PAYMENT" );
             let resProvince = await getAllcodeService( "PROVINCE" );
             /* let resSpecialty = await getAllSpecialty();
@@ -570,7 +568,6 @@ export const getRquiredDoctorInfor = () =>
                     resPayment: resPayment.data,
                     resProvince: resProvince.data,
                 }
-                console.log( "check data: ", data );
                 dispatch( fetchRequiredDoctorInforSuccess( data ) );
             }
             else
