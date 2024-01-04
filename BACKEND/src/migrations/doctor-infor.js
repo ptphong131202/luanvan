@@ -52,9 +52,6 @@ module.exports = {
                 allowNull: false,
                 type: Sequelize.STRING
             },
-            doctorInfor: {
-                type: Sequelize.STRING
-            },
             doctorMarkdonw: {
                 type: Sequelize.STRING
             },

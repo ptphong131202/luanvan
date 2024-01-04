@@ -106,6 +106,26 @@ const getDetailInforDoctor = ( id ) =>
 
 
 
+/// -------- clinic ---------
+// update patient
+const updateClinic = ( inputData ) =>
+{
+    return axios.put( `api/update-clicnic`, inputData );
+}
+
+
+// delete a admi
+const deletedClinic = ( clinicId ) =>
+{
+    return axios.delete( `api/delete-clinic`,
+        {
+            data: { id: clinicId },
+        } );
+}
+
+
+
+
 const getTopDoctorHomeService = ( limit ) =>
 {
     return axios.get( `/api/get-top-doctor-home?limit=${ limit }` );
@@ -226,7 +246,9 @@ export
     handleLoginApi, getAllUser, createNewUserService,
     deleteUserService, editUserService, createNewAdmin,
     getAllAmin, deleteadmin, editAdminService, createNewDoctor,
-    getAllDoctor, editDoctorService, deletedDoctor,
+    getAllDoctor, editDoctorService, deletedDoctor, updateClinic,
+    deletedClinic,
+
 
     getAllcodeService,
     getTopDoctorHomeService, saveDetailDoctor,

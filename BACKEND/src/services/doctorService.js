@@ -67,113 +67,6 @@ let getAllDoctor = () =>
     } )
 }
 
-let saveInforDoctor = ( dataInput ) =>
-{
-    return new Promise( async ( resolve, reject ) =>
-    {
-        try
-        {
-
-            if ( !dataInput.doctorId
-                || !dataInput.doctorHTML
-                || !dataInput.doctorMarkdonw
-                || !dataInput.descHTML
-                || !dataInput.descMarkdonw
-                || !dataInput.action
-                || !dataInput.selectedPrice
-                || !dataInput.selectedProvince
-                || !dataInput.selectedPayment
-                || !dataInput.nameClicnic
-                || !dataInput.addressclicnic
-                || !dataInput.note
-                /* || !dataInput.specialtyId,
-                !! !dataInput.clinicId */ )
-            {
-                resolve( {
-                    errCode: 1,
-                    errMessage: "Missing paramiter!"
-                } )
-            }
-            else
-            {
-                if ( dataInput.action === 'CREATE' )
-                {
-                    await db.Doctor_infor.create( {
-                        doctorHTML: dataInput.doctorHTML,
-                        doctorMarkdonw: dataInput.doctorMarkdonw,
-                        descHTML: dataInput.descHTML,
-                        descMarkdonw: dataInput.descMarkdonw,
-                        doctorId: dataInput.doctorId,
-                    } )
-                }
-                if ( dataInput.action === 'EDIT' )
-                {
-
-
-                    let doctorMarkdown = await db.Doctor_infor.findOne( {
-                        where: {
-                            doctorId: dataInput.doctorId
-                        },
-                        raw: false,
-                    } )
-
-                    if ( doctorMarkdown )
-                    {
-                        doctorMarkdown.doctorHTML = dataInput.doctorHTML;
-                        doctorMarkdown.doctorMarkdonw = dataInput.doctorMarkdonw;
-                        doctorMarkdown.descHTML = dataInput.descHTML;
-                        doctorMarkdown.descMarkdonw = dataInput.descMarkdonw;
-                        await doctorMarkdown.save();
-                    }
-                }
-
-                let doctorInfor = await db.Doctor_infor.findOne( {
-                    where: {
-                        doctorId: dataInput.doctorId
-                    },
-                    raw: false,
-                } )
-                if ( doctorInfor )
-                {
-                    doctorInfor.priceId = dataInput.selectedPrice;
-                    doctorInfor.provinceId = dataInput.selectedPayment;
-                    doctorInfor.paymentId = dataInput.selectedProvince;
-                    doctorInfor.addressClinic = dataInput.addressclicnic;
-                    doctorInfor.nameClinic = dataInput.nameClicnic;
-                    doctorInfor.note = dataInput.note;
-                    doctorInfor.doctorId = dataInput.doctorId;
-                    /*  doctorInfor.clinicId = dataInput.clinicId;
-                     doctorInfor.specialtyId = dataInput.specialtyId; */
-                    await doctorInfor.save();
-                } else
-                {
-                    await db.Doctor_infor.create( {
-                        priceId: dataInput.selectedPrice,
-                        provinceId: dataInput.selectedPayment,
-                        paymentId: dataInput.selectedProvince,
-                        addressClinic: dataInput.addressclicnic,
-                        nameClinic: dataInput.nameClicnic,
-                        note: dataInput.note,
-                        doctorId: dataInput.doctorId,
-                        /* clinicId: dataInput.clinicId,
-                        specialtyId: dataInput.specialtyId, */
-                    } )
-                }
-                resolve( {
-                    errCode: 0,
-                    errMessage: "Save information doctor success!"
-                } )
-
-
-            }
-        }
-        catch ( e )
-        {
-            reject( e );
-        }
-    } )
-}
-
 let getDetialDoctorbyid = ( inputId ) =>
 {
     return new Promise( async ( resolve, reject ) =>
@@ -233,6 +126,8 @@ let getDetialDoctorbyid = ( inputId ) =>
         }
     } )
 }
+
+
 
 let bulkCreateSchedule = ( data ) =>
 {
@@ -591,13 +486,12 @@ let searchDoctor = ( data ) =>
 module.exports = {
     getTopDoctorHome: getTopDoctorHome,
     getAllDoctor: getAllDoctor,
-    saveInforDoctor: saveInforDoctor,
-    getDetialDoctorbyid: getDetialDoctorbyid,
     bulkCreateSchedule: bulkCreateSchedule,
     getScheduleDoctorDate: getScheduleDoctorDate,
     getExtraInforDoctor: getExtraInforDoctor,
     getProfileDoctor: getProfileDoctor,
     getPatientForDoctor: getPatientForDoctor,
     sendRemedy: sendRemedy,
-    searchDoctor: searchDoctor
+    searchDoctor: searchDoctor,
+    getDetialDoctorbyid: getDetialDoctorbyid
 }

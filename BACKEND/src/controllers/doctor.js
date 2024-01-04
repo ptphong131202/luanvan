@@ -89,6 +89,23 @@ let deleteDoctor = async ( req, res ) =>
     }
 }
 
+let postInforDoctor = async ( req, res ) =>
+{
+    try
+    {
+        let response = await doctorService.saveInforDoctor( req.body );
+        return res.status( 200 ).json( response );
+    }
+    catch ( e )
+    {
+        console.log( e );
+        return res.status( 200 ).json( {
+            errCode: -1,
+            errMessage: "Error from server"
+        } )
+    }
+}
+
 module.exports = {
     createNewDoctor: createNewDoctor,
     getDoctor: getDoctor,
@@ -96,4 +113,5 @@ module.exports = {
     getAllCode: getAllCode,
     getDoctorById: getDoctorById,
     deleteDoctor: deleteDoctor,
+    postInforDoctor: postInforDoctor
 }

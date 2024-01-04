@@ -1,37 +1,121 @@
-.clinic-container {
-    margin-top: 50px;
+.classManageClinic {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 
-    .file {
-        display: flex;
-        flex-direction: column;
-    }
+    .clinic-container {
+        margin-top: 50px;
 
-    .label-markdown {
-        background: #ffff;
-        width: 135px;
-        padding: 5px 10px;
-        font-size: 16px;
-        margin-top: 10px;
-
-        i {
-            margin-left: 10px;
+        .file {
+            display: flex;
+            flex-direction: column;
         }
-    }
 
-    .markdown {
-        margin-top: 10px;
-
-        label {
+        .label-markdown {
             background: #ffff;
             width: 135px;
             padding: 5px 10px;
             font-size: 16px;
+            margin-top: 10px;
 
             i {
-                font-size: 16px;
                 margin-left: 10px;
-                cursor: pointer;
+            }
+        }
+
+        .markdown {
+            margin-top: 10px;
+            /* border: 1px solid black;
+            position: fixed;
+            top: 100px;
+            left: 100px;
+            right: 100px; */
+
+            label {
+                background: #ffff;
+                width: 135px;
+                padding: 5px 10px;
+                font-size: 16px;
+
+                i {
+                    font-size: 16px;
+                    margin-left: 10px;
+                    cursor: pointer;
+                }
             }
         }
     }
+
+}
+
+.tableClinic {
+    height: 200px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: auto;
+
+
+    .tableClinicContent {
+        height: 50px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        margin-top: 5px;
+
+        .tableClinicContent-name {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+
+            img {
+                width: 99px;
+                height: 37px;
+            }
+
+            .tableClinicContent-name-left {
+                display: flex;
+                flex-direction: column;
+                margin-left: 15px;
+
+                .contentName {
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+
+                .contentAddress {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .tableClinicContent-action {
+            margin-right: 10px;
+
+            button {
+                margin: 0 5px;
+                color: #ffff;
+                border: none;
+                border-radius: 3px;
+                min-width: 35px;
+            }
+
+            .buttonDetail {
+                background-color: blue;
+            }
+
+            .buttonEdit {
+                background-color: orange;
+            }
+
+            .buttonDelete {
+                background-color: red;
+            }
+        }
+    }
+
 }

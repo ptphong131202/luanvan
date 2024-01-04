@@ -29,8 +29,6 @@ module.exports = ( sequelize, DataTypes ) =>
         position: DataTypes.STRING, // full name
         phone: DataTypes.STRING, // so dien thoai
         role: DataTypes.STRING, // so dien thoai
-        clinicId: DataTypes.STRING, // so dien thoai
-        specialtyId: DataTypes.STRING, // so dien thoai
         image: DataTypes.BLOB( 'long' ), // so dien thoai
     }, {
         sequelize,

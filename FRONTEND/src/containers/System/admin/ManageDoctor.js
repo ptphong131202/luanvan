@@ -164,15 +164,15 @@ class ManageDoctor extends Component
     {
         if ( prevProps.language !== this.props.language )
         {
-            let id = +this.getid( this.props.location.search );
             this.getbuildInputSelect();
+            let id = +this.getid( this.props.location.search );
             await this.handleChangeSelect( id );
 
         }
         if ( prevProps.allRequiredDoctorInfor !== this.props.allRequiredDoctorInfor )
         {
-            let id = +this.getid( this.props.location.search );
             this.getbuildInputSelect();
+            let id = +this.getid( this.props.location.search );
             await this.handleChangeSelect( id );
         }
     }
@@ -194,11 +194,14 @@ class ManageDoctor extends Component
         } )
     }
 
-    handleSaveContentMarkdown = () =>
+    handleSaveContentMarkdown = async () =>
     {
         let { hasOldData } = this.state;
+        console.log( "check  stateaaaaa: ", this.state );
         let id = +this.getid( this.props.location.search );
-        this.props.saveInforDetailDoctor( {
+        let res = await this.props.saveInforDetailDoctor( {
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
             descHTML: this.state.descHTML,
             descMarkdonw: this.state.descMarkdonw,
             doctorHTML: this.state.doctorHTML,
@@ -215,6 +218,11 @@ class ManageDoctor extends Component
             specialtyId: this.state.selectedSpecialty.value, */
 
         } )
+        if ( res && res.errCode == 0 )
+        {
+            let id = +this.getid( this.props.location.search );
+            await this.handleChangeSelect( id );
+        }
     }
 
     handleChangeSelect = async ( selectedDoctor ) =>
@@ -227,8 +235,6 @@ class ManageDoctor extends Component
         let dataSelectSpecialty = this.buildInputSelect( resSpecialty, "SPECIALTY" );
         let dataSelectClinic = this.buildInputSelect( resClinic, "CLINIC" );
         let res = await getDetailInforDoctor( selectedDoctor );
-        console.log( "check selected doctor 1: ", this.state )
-        console.log( "check selected doctor: ", res )
         if ( res && res.data && res.data.Doctor_infor )
         {
             let addressclicnic = '', nameClicnic = '',
@@ -347,13 +353,13 @@ class ManageDoctor extends Component
                             <label className='d-block'><FormattedMessage id="admin.manage-doctor.doctor" />  </label>
                             { language === LANGUAGE.VI ?
                                 <div className='d-flex justify-content-between'>
-                                    <input type='text' name="name" value={ this.state.firstName } className='form-controll col-6' />
-                                    <input type='text' name="name" value={ this.state.lastName } className='form-controll col-6' />
+                                    <input type='text' name="name" onChange={ ( event ) => this.handleOnchangeDescription( event, "firstName" ) } value={ this.state.firstName } className='form-controll col-6' />
+                                    <input type='text' name="name" onChange={ ( event ) => this.handleOnchangeDescription( event, "lastName" ) } value={ this.state.lastName } className='form-controll col-6' />
                                 </div> :
                                 <div className='d-flex justify-content-between mx-1'>
 
-                                    <input type='text' name="name" value={ this.state.lastName } className='form-controll col-6' />
-                                    <input type='text' name="name" value={ this.state.firstName } className='form-controll col-6' />
+                                    <input type='text' name="name" onChange={ ( event ) => this.handleOnchangeDescription( event, "lastName" ) } value={ this.state.lastName } className='form-controll col-6' />
+                                    <input type='text' name="name" onChange={ ( event ) => this.handleOnchangeDescription( event, "firstName" ) } value={ this.state.firstName } className='form-controll col-6' />
                                 </div>
                             }
                         </div>
@@ -469,7 +475,7 @@ class ManageDoctor extends Component
                         <button
                             className={ this.state.hasOldData === true ? 'save-content-doctor' : 'create-content-doctor' }
                             onClick={ () => this.handleSaveContentMarkdown() }
-                        >{ this.state.hasOldData === true ? <FormattedMessage id="admin.manage-doctor.add" /> : <FormattedMessage id="admin.manage-doctor.save" /> }</button>
+                        ><FormattedMessage id="admin.manage-doctor.save" /></button>
                     </p>
                 </div>
             </React.Fragment>

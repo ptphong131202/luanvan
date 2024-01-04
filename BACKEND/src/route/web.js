@@ -39,7 +39,15 @@ let initWebRoutes = ( app ) =>
     router.put( '/api/update-doctor', doctor.updateDoctor ); // update a patient
     router.get( '/api/get-doctor-by-id', doctor.getDoctorById ); // get all admin
     router.delete( '/api/delete-doctor', doctor.deleteDoctor ); // delete admin updateAdmin
+    router.get( "/api/get-detial-doctor-by-id", doctorController.getDetialDoctor );
+    router.post( "/api/save-infor-doctor", doctor.postInforDoctor );
 
+    // clinic
+    router.put( '/api/update-clicnic', clinicController.updateClinic );  // update a patient
+    router.post( "/api/create-new-clinic", clinicController.createNewClinic );
+    router.get( "/api/get-all-clinic", clinicController.getAllClinic );
+    router.get( "/api/get-detail-clinic-by-id", clinicController.getDetalClinicById );
+    router.delete( "/api/delete-clinic", clinicController.deleteClinic );
 
 
     // route table allcode
@@ -47,9 +55,7 @@ let initWebRoutes = ( app ) =>
     // route get doctor home page
     router.get( "/api/get-top-doctor-home", doctorController.getTopDoctorHome );
     router.get( "/api/getAllDoctor", doctorController.getAllDoctor );
-    router.post( "/api/save-infor-doctor", doctorController.postInforDoctor );
 
-    router.get( "/api/get-detial-doctor-by-id", doctorController.getDetialDoctor );
     router.get( "/api/get-patient-for-doctor", doctorController.getPatientForDoctor );
     router.post( "/api/send-remedy", doctorController.sendRemedy );
 
@@ -63,9 +69,7 @@ let initWebRoutes = ( app ) =>
     router.post( "/api/create-new-specialty", specialtyController.createNewSpecialty );
     router.get( "/api/get-all-specialty", specialtyController.getAllSpecialty );
     router.get( "/api/get-detail-specialty-by-id", specialtyController.getDetalSpecialtyById );
-    router.post( "/api/create-new-clinic", clinicController.createNewClinic );
-    router.get( "/api/get-all-clinic", clinicController.getAllClinic );
-    router.get( "/api/get-detail-clinic-by-id", clinicController.getDetalClinicById );
+
 
 
     router.get( "/api/search-doctor", doctorController.searchDoctor );

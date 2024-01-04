@@ -328,6 +328,88 @@ let deleteDoctor = ( userid ) =>
 }
 
 
+
+let saveInforDoctor = ( dataInput ) =>
+{
+    return new Promise( async ( resolve, reject ) =>
+    {
+        try
+        {
+
+            if ( !dataInput.doctorId
+                || !dataInput.doctorHTML
+                || !dataInput.doctorMarkdonw
+                || !dataInput.descHTML
+                || !dataInput.descMarkdonw
+                || !dataInput.action
+                || !dataInput.selectedPrice
+                || !dataInput.selectedProvince
+                || !dataInput.selectedPayment
+                || !dataInput.nameClicnic
+                || !dataInput.addressclicnic
+                || !dataInput.note
+                || !dataInput.firstName
+                || !dataInput.lastName
+
+                /* || !dataInput.specialtyId,
+                !! !dataInput.clinicId */ )
+            {
+                resolve( {
+                    errCode: 1,
+                    errMessage: "Missing paramiter!"
+                } )
+            }
+            else
+            {
+                let doctor = await db.Doctor.findOne( {
+                    where: {
+                        id: dataInput.doctorId
+                    },
+                    raw: false,
+                } )
+                if ( doctor )
+                {
+                    doctor.firstName = dataInput.firstName;
+                    doctor.lastName = dataInput.lastName;
+                    await doctor.save();
+                }
+                let doctorInfor = await db.Doctor_infor.findOne( {
+                    where: {
+                        doctorId: dataInput.doctorId
+                    },
+                    raw: false,
+                } )
+                if ( doctorInfor )
+                {
+                    doctorInfor.doctorHTML = dataInput.doctorHTML;
+                    doctorInfor.doctorMarkdonw = dataInput.doctorMarkdonw;
+                    doctorInfor.descHTML = dataInput.descHTML;
+                    doctorInfor.descMarkdonw = dataInput.descMarkdonw;
+                    doctorInfor.priceId = dataInput.selectedPrice;
+                    doctorInfor.provinceId = dataInput.selectedPayment;
+                    doctorInfor.paymentId = dataInput.selectedProvince;
+                    doctorInfor.addressClinic = dataInput.addressclicnic;
+                    doctorInfor.nameClinic = dataInput.nameClicnic;
+                    /*  doctorInfor.clinicId = dataInput.clinicId;
+                     doctorInfor.specialtyId = dataInput.specialtyId; */
+                    await doctorInfor.save();
+                }
+                resolve( {
+                    errCode: 0,
+                    errMessage: "Save information doctor success!"
+                } )
+
+
+            }
+        }
+        catch ( e )
+        {
+            reject( e );
+        }
+    } )
+}
+
+
 module.exports = {
     createNewDoctor: createNewDoctor,
     hashUserPassword: hashUserPassword,
@@ -336,4 +418,5 @@ module.exports = {
     getAllCode: getAllCode,
     getDoctorById: getDoctorById,
     deleteDoctor: deleteDoctor,
+    saveInforDoctor: saveInforDoctor
 }

@@ -169,8 +169,38 @@ let handleUserLogin = ( email, password ) =>
                         }
                     } else
                     {
-                        userData.errCode = 2;
-                        userData.errMessage = `User not found!`;
+                        let user = await db.Doctor.findOne( {
+                            attributes: [ "id", 'email', 'firstName', 'lastName', 'password', 'phone', 'role' ],
+                            where: { email: email },
+                            raw: true,
+
+                        } );
+                        if ( user )
+                        {
+                            //compare password: dùng cách 1 hay cách 2 đều chạy đúng cả =))
+                            // Cách 1: dùng asynchronous (bất đồng bộ)
+                            let check = await bcrypt.compare( password, user.password );
+
+
+
+                            if ( check )
+                            {
+                                userData.errCode = 0;
+                                userData.errMessage = 'Login successful!';
+
+                                delete user.password;
+                                userData.user = user;
+                            }
+                            else
+                            {
+                                userData.errCode = 3;
+                                userData.errMessage = 'Wrong password!';
+                            }
+                        } else
+                        {
+                            userData.errCode = 2;
+                            userData.errMessage = `User not found!`;
+                        }
                     }
                 }
 

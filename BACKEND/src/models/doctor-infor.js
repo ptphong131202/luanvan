@@ -30,7 +30,6 @@ module.exports = ( sequelize, DataTypes ) =>
         addressClinic: DataTypes.STRING,
         nameClinic: DataTypes.STRING,
         note: DataTypes.STRING,
-        doctorInfor: DataTypes.STRING,
         doctorMarkdonw: DataTypes.STRING,
         doctorHTML: DataTypes.STRING,
         descMarkdonw: DataTypes.STRING,
