@@ -39,7 +39,9 @@ class ManageClinic extends Component
             this.setState( {
                 listClinic: res.data,
                 action: "CREATE",
-                imgEdit: '0'
+                imgEdit: '0',
+                updateimgEdit: '1'
+
             } );
         }
     }
@@ -65,15 +67,33 @@ class ManageClinic extends Component
     // event in img for input file 
     handleOnchangeImg = async ( event ) =>
     {
-        let file = event.target.files[ 0 ];
-        if ( file )
+        if ( this.state.imgEdit === '0' )
         {
-            let getBase64 = await CommonUtils.getBase64( file );
-            /* let objectUrl = URL.createObjectURL(file); */
-            this.setState( {
-                /*   previewImg: objectUrl, */
-                imageBase64: getBase64
-            } )
+            let file = event.target.files[ 0 ];
+            if ( file )
+            {
+                let getBase64 = await CommonUtils.getBase64( file );
+                /* let objectUrl = URL.createObjectURL(file); */
+                this.setState( {
+                    /*   previewImg: objectUrl, */
+                    imageBase64: getBase64,
+                    updateimgEdit: '0'
+                } )
+            }
+        }
+        if ( this.state.imgEdit === '1' )
+        {
+            let file = event.target.files[ 0 ];
+            if ( file )
+            {
+                let getBase64 = await CommonUtils.getBase64( file );
+                /* let objectUrl = URL.createObjectURL(file); */
+                this.setState( {
+                    /*   previewImg: objectUrl, */
+                    imageBase64: getBase64,
+                    updateimgEdit: '1'
+                } )
+            }
         }
     }
 
@@ -99,7 +119,8 @@ class ManageClinic extends Component
                     this.setState( {
                         listClinic: allclinic.data,
                         action: "CREATE",
-                        imgEdit: '0'
+                        imgEdit: '0',
+                        updateimgEdit: '1'
                     } );
                 }
             }
@@ -113,10 +134,11 @@ class ManageClinic extends Component
             let res = await updateClinic( {
                 name: this.state.name,
                 address: this.state.address,
-                /* imageBase64: this.state.image, */
+                imageBase64: this.state.imageBase64,
                 descriptionHTML: this.state.descriptionHTML,
                 descriptionMarkdown: this.state.descriptionMarkdown,
-                id: this.state.id
+                id: this.state.id,
+                updateimgEdit: this.state.updateimgEdit
             } );
             if ( res && res.errCode === 0 )
             {
@@ -127,8 +149,16 @@ class ManageClinic extends Component
                     imageBase64: '',
                     descriptionHTML: '',
                     descriptionMarkdown: '',
-
+                    updateimgEdit: '0',
+                    action: "CREATE",
                 } )
+                let allclinic = await getAllClinic();
+                if ( allclinic && allclinic.errCode === 0 )
+                {
+                    this.setState( {
+                        listClinic: allclinic.data,
+                    } );
+                }
             }
             else
             {
@@ -152,7 +182,8 @@ class ManageClinic extends Component
                 descriptionHTML: res.data.descriptionHTML,
                 descriptionMarkdown: res.data.descriptionMarkdown,
                 action: "EDIT",
-                id: item.id
+                id: item.id,
+                updateimgEdit: '0',
             } )
         }
 
@@ -181,7 +212,8 @@ class ManageClinic extends Component
                 this.setState( {
                     listClinic: allclinic.data,
                     action: "CREATE",
-                    imgEdit: "0"
+                    imgEdit: "0",
+                    updateimgEdit: '0',
                 } );
             }
             toast.success( "Clinic delete successfully!" );

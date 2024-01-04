@@ -175,7 +175,7 @@ let searchClinic = ( data ) =>
 
 let updateClinic = ( data ) =>
 {
-    console.log( data )
+
     return new Promise( async ( resolve, reject ) =>
     {
         try
@@ -185,26 +185,54 @@ let updateClinic = ( data ) =>
                 raw: false
 
             } )
-            if ( clinic )
+            if ( data.updateimgEdit === '0' )
             {
-                clinic.name = data.name;
-                clinic.address = data.address;
-                clinic.descriptionMarkdown = data.descriptionMarkdown;
-                clinic.descriptionHTML = data.descriptionHTML;
-                await clinic.save();
+                if ( clinic )
+                {
+                    clinic.name = data.name;
+                    clinic.address = data.address;
+                    clinic.descriptionMarkdown = data.descriptionMarkdown;
+                    clinic.descriptionHTML = data.descriptionHTML;
+                    await clinic.save();
 
-                resolve( {
-                    errCode: 0,
-                    errMessage: 'Update patient successfully!'
-                } );
+                    resolve( {
+                        errCode: 0,
+                        errMessage: 'Update patient successfully!'
+                    } );
 
-            } else
+                } else
+                {
+                    resolve( {
+                        errCode: 2,
+                        errMessage: 'User not found'
+                    } );
+
+                }
+            }
+            else
             {
-                resolve( {
-                    errCode: 2,
-                    errMessage: 'User not found'
-                } );
+                if ( clinic )
+                {
+                    clinic.name = data.name;
+                    clinic.address = data.address;
+                    clinic.image = data.imageBase64;
+                    clinic.descriptionMarkdown = data.descriptionMarkdown;
+                    clinic.descriptionHTML = data.descriptionHTML;
+                    await clinic.save();
 
+                    resolve( {
+                        errCode: 0,
+                        errMessage: 'Update patient successfully!'
+                    } );
+
+                } else
+                {
+                    resolve( {
+                        errCode: 2,
+                        errMessage: 'User not found'
+                    } );
+
+                }
             }
         }
         catch ( e )
